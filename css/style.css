@@ -96,6 +96,11 @@ img {
 
   line-height: 1.19;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .logo:hover,
@@ -112,6 +117,7 @@ img {
 .nav {
   display: flex;
   align-items: center;
+
 }
 
 .site-nav {
@@ -126,12 +132,44 @@ img {
 .site-title {
   color: var(--title-text-color);
 
+  padding: 39px 0;
+
   font-weight: 500;
   line-height: 1.14;
 
   letter-spacing: 0.02em;
 
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: relative;
+
+}
+
+.site-title::after {
+  content: '';
+  position: absolute;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  left: 0;
+  bottom: 0;
+
+  opacity: 0;
+
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.site-title:hover::after {
+  opacity: 1;
 }
 
 .site-nav .link:hover,
@@ -155,6 +193,11 @@ img {
   letter-spacing: 0.02em;
 
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .svg-mail {
@@ -162,6 +205,11 @@ img {
   height: 12px;
   margin-right: 10px;
   align-items: center;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .svg-tell {
@@ -169,6 +217,11 @@ img {
   height: 16px;
   margin-right: 10px;
   align-items: center;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .site-contacts {
@@ -327,6 +380,29 @@ background-image: url(../images/diagram1.svg);
   margin-left: 30px;
   margin-top: 30px;
   width: calc(100% / 3 - 30px);
+  
+  position: relative;
+}
+
+.business-list .lable {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 27px 0;
+
+  width: 100%;
+
+  color: var(--white-color);
+  background-color: rgba(47, 48, 58, 0.8);
+
+  bottom: 0;
+
+  text-transform: uppercase;
+
+  font-weight: 700;
 }
 
 /*__________Team___________*/
@@ -391,6 +467,12 @@ background-image: url(../images/diagram1.svg);
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+
 }
 
 .social-list-link:hover,
@@ -406,6 +488,11 @@ fill: var(--white-color);
 .social-list-icon {
   width: 20px;
   height: 20px;
+
+  transition-property: fill,background-fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .team-list .social-list-icon {
@@ -427,10 +514,20 @@ fill: var(--white-color);
   justify-content: center;
   border: 1px solid #AFB1B8;
   border-radius: 4px;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .parthners-list-icon {
   fill: #AFB1B8;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .parthners-list-link:hover .parthners-list-icon,
@@ -512,6 +609,11 @@ fill: var(--white-color);
 
   border: none;
   outline: none;
+
+  transition-property: color,background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .filter-link:active {
@@ -599,6 +701,8 @@ fill: var(--white-color);
 
 .footer-social-list .social-list-icon {
   fill: var(--white-color);
+
+
 }
 
 /*____________Portfolio_________*/
@@ -637,6 +741,7 @@ fill: var(--white-color);
   border: 1px solid #eeeeee;
 }
 
+
 .project-text {
   color: var(--primery-text-color);
 
@@ -646,10 +751,105 @@ fill: var(--white-color);
 }
 
 .project-hover-icon {
-  display: block;
+  display: inline-block;
+
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.project-overlay {
+  position: absolute;
+
+  padding: 63px 24px;
+
+  font-weight: 400px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: 'Roboto',sans-serif;
+  color: var(--white-color);
+
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);;
+  transform: translateY(100%);
+  opacity: 0;
+
+
+  transition-property: opacity,transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-thumb{
+  position: relative;
+  overflow: hidden;
 }
 
 .project-hover-icon:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 
 }
+
+.project-hover-icon:hover .project-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ___________BACKDROP______ */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition-property: opacity,visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+
+  background-color: var(--white-color);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  }
+
+  .modal-close-btn {
+    border-radius: 50%;
+    position: absolute ;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--white-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    outline: 0;
+  }
+
+  .modal-close-logo {
+    top: 8px;
+    right: 8px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }

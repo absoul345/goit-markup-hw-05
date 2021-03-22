@@ -49,7 +49,7 @@
             <section class="hero">
                 <div class="hero-container">
                     <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                    <button type="button" class="button btn-hero">Заказать услугу</button>
+                    <button type="button" class="button btn-hero" data-modal-open>Заказать услугу</button>
                 </div>
             </section>
         </div>
@@ -85,9 +85,15 @@
             <div class="business container">
                 <h2 class="section-title">Чем мы занимаемся</h2>
                 <ul class="business-list list">
-                    <li class="business-item"><img src="./images/picture1.jpg" alt="Работа за ноутбуком1" width="370" height="294"></li>
-                    <li class="business-item"><img src="./images/picture2.jpg" alt="Работа за ноутбуком2" width="370" height="294"></li>
-                    <li class="business-item"><img src="./images/picture3.jpg" alt="Работа за ноутбуком3" width="370" height="294"></li>
+                    <li class="business-item"><img src="./images/picture1.jpg" alt="Работа за ноутбуком1" width="370" height="294">
+                    <p class="lable">Десктопные приложения</p>
+                    </li>
+                    <li class="business-item"><img src="./images/picture2.jpg" alt="Работа за ноутбуком2" width="370" height="294">
+                    <p class="lable">Мобильные приложения</p>
+                    </li>
+                    <li class="business-item"><img src="./images/picture3.jpg" alt="Работа за ноутбуком3" width="370" height="294">
+                    <p class="lable">Дизайнерские решения</p>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -349,5 +355,17 @@
             </div>
         </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+           <button class="modal-close-btn" data-modal-close>
+               <svg class="modal-close-logo">
+                    <use href="./images/sprite.svg#icon-close"></use>
+                </svg>
+           </button>
+        </div>
+    </div>
+
+    <script src="./js/model.js"></script>
 </body>
 </html>
